@@ -43,8 +43,12 @@ public class EditServlet extends HttpServlet {
 
         request.getSession().setAttribute("message_id", m.getId());
 
+        if(m !=null) {
+            request.getSession().setAttribute("message_id",m.getId());
+        }
+
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/messages/edit.jsp");
         rd.forward(request, response);
-    }
 
+    }
 }
